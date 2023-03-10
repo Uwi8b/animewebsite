@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Movie Download Website</title>
+    <base href="./assets/" target="" />
+<script src="https://kit.fontawesome.com/91a0e695a9.js" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style type="text/css" media="all">
+
+
+        /* Global Styles */
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            color: #fff;
+            padding: 1rem;
+            width: 100%;
+            position: sticky;
+            top: 0;
+        }
+
+        header h1 {
+            font-size: 2rem;
+            margin: 0;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav li {
+            margin: 0 1rem;
+
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+
+        }
+        nav a:hover {
+            border-bottom: 1px solid #fff;
+
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        .movie-card {
+            display: flex;
+            margin-bottom: 2rem;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 5px #333;
+            overflow: hidden;
+
+        }
+
+        .movie-card img {
+            width: 200px;
+            height: 300px;
+            object-fit: cover;
+            margin-right: 1rem;
+        }
+
+        .movie-info {
+            padding: 1rem;
+        }
+
+        .movie-info h3 {
+            margin: 0;
+            font-size: 1.5rem;
+        }
+
+        .movie-info p {
+            margin: 1rem 0;
+        }
+
+        button {
+            background-color: #333;
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #6c5ce7;
+            color: #fff;
+            box-shadow: 0 0 10px rgba(108, 92, 231, 0.5);
+            transform: scale(1.2);
+            transition: all 0.3s ease-in-out;
+        }
+
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+        }
+        header .sp img {
+            margin-top: 0px;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+            
+        }
+
+        .social-links {
+            margin-bottom: 0.5rem;
+        }
+
+        .social-links a {
+            display: inline-block;
+            margin-right: 1rem;
+            font-size: 1.5rem;
+            color: #fff;
+        }
+
+        .fa-facebook-f {
+            color: #3b5998;
+        }
+
+        .fa-twitter {
+            color: #00acee;
+        }
+
+        .fa-instagram {
+            color: #dd2a7b;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 0.8rem;
+        }
+
+        /* Media Queries */
+
+@media (max-width: 500px) {
+            .social-links {
+                margin-bottom: 0;
+            }
+
+            .social-links a {
+                margin-right: 0.5rem;
+            }
+        }
+
+
+        /* Media Queries */
+@media screen and (max-width: 768px) {
+            header {
+                flex-direction: column;
+                height: 18vh;
+                position: static;
+            }
+
+            header h1 {
+                margin-bottom: 1rem;
+                font-size: 30px;
+            }
+
+            nav {
+                margin-top:;
+            }
+            nav li {
+                margin: 0 0.5rem;
+
+            }
+
+
+            main {
+                padding: 1rem;
+            }
+
+            .movie-card {
+                flex-direction: column;
+            max-width: 300px;
+            margin: 50px auto;
+            
+
+
+            }
+
+            .movie-card img {
+                width: 100%;
+                height: auto;
+                margin: 0;
+                margin-bottom: 1rem;
+            }
+            
+            
+    .search-container input[type=text] {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid black;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  width: 80%;
+  position: relative;
+  bottom: 2px;
+  
+
+        }
+}
+        
+        /*logo*/
+        #logo{
+            width: 200px;
+        }
+        
+    .search-container {
+  display: flex;
+  justify-content: center;
+  margin: 30px auto;
+ /* transform: translate(110px, 100px) ;*/
+ position: relative;
+ 
+}
+
+.search-container input[type=text] {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid black;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  width: 80%;
+  position: relative;
+  bottom: 2px;
+  
+}
+
+.search-container button {
+  padding:  10px;
+  background-color: #007bff;
+  font-size: 16px;
+  border: 1px solid black;
+  border-radius: 0 5px 5px 0;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  position: relative;
+  bottom: 6.6px;
+  margin-left: -4px;
+  transform: translate(3px,4.6px);
+}
+
+.search-container button:hover {
+  background-color: #0062cc;
+}
+
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1><img id="logo" src="logo (1).png" alt="logo" /></h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="./About.html">About</a></li>
+                <li><a href="#">TV</a></li>
+                <li><a href="Anime.html">Anime</a></li>
+                <li><a href="./contect.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+            <div class="search-container">
+  <form action="/search" method="get">
+    <input type="text" placeholder="Search movies..." name="search">
+    <button type="submit"><i class="fa fa-search"></i></button>
+  </form>
+  </div>
+    <main>
+        <section class="featured-movies">
+            <h2>Featured Movies</h2>
+            <div class="movie-card">
+                <img src="movies 1.jpeg" alt="Movie 1">
+                <div class="movie-info">
+                    <h3>Movie 1</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    </p>
+                    <a href="http://103.152.18.18/Data/tvseries/english/Legacies/s02/Legacies%20S02E01%20I%27ll%20Never%20Give%20Up%20Hope.mp4">
+                        <button>Download</button>
+                    </a>
+
+                </div>
+            </div>
+            <div class="movie-card">
+                <img src="Movies 2.jpeg" alt="Movie 2">
+                <div class="movie-info">
+                    <h3>Movie 2</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    </p>
+                    <button>Download</button>
+                </div>
+            </div>
+            <div class="movie-card">
+                <img src="Movies 3.jpeg" alt="Movie 3">
+                <div class="movie-info">
+                    <h3>Movie 3</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    </p>
+                    <button>Download</button>
+                </div>
+            </div>
+        </section>
+        <section class="popular-movies">
+            <h2>Popular Movies</h2>
+            <div class="movie-card">
+                <img src="Movies 4.jpeg" alt="Movie 4">
+                <div class="movie-info">
+                    <h3>Movie 4</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    </p>
+                    <button>Download</button>
+                </div>
+            </div>
+            <div class="movie-card">
+                <img src="Movies 10.jpeg" alt="Animaniacs.jpg">
+                <div class="movie-info">
+                    <h3>Movie 5</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    </p>
+                    <button>Download</button>
+                </div>
+            </div>
+            <div class="movie-card">
+                <img src="Movies 6.jpeg" alt="Movie 6">
+                <div class="movie-info">
+                    <h3>Movie 6</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    </p>
+                    <button>Download</button>
+                </div>
+            </div>
+        </section>
+        
+        <section class="popular-movies">
+            <h2>Popular Movies</h2>
+            <div class="movie-card">
+                <img src="Movies 7.jpeg" alt="Movie 4">
+                <div class="movie-info">
+                    <h3>Movie 77</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    </p>
+                    <button>Download</button>
+                </div>
+            </div>
+            <div class="movie-card">
+                <img src="Movies 8.jpeg" alt="Animaniacs.jpg">
+                <div class="movie-info">
+                    <h3>Movie 78</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    </p>
+                    <button>Download</button>
+                </div>
+            </div>
+            <div class="movie-card">
+                <img src="Movies 10.jpeg" alt="Movie 6">
+                <div class="movie-info">
+                    <h3>Movie 6</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    </p>
+                    <button>Download</button>
+                </div>
+            </div>
+        </section
+    </main>
+    <footer>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+        <p>
+            &copy; 2021 Movie Download. All Rights Reserved.
+        </p>
+    </footer>
+
+</body>
+<script type="text/javascript" charset="utf-8">
+
+
+</script>
+</html>
