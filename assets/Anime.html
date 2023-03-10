@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Movie Download Website</title>
+<script src="https://kit.fontawesome.com/91a0e695a9.js" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style type="text/css" media="all">
+
+
+        /* Global Styles */
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            color: #fff;
+            padding: 1rem;
+            width: 100%;
+             position: sticky;
+  top: 0
+        }
+
+        header h1 {
+            font-size: 2rem;
+            margin: 0;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav li {
+            margin: 0 1rem;
+
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+
+        }
+        nav a:hover {
+            border-bottom: 1px solid #fff;
+
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        .movie-card {
+            display: flex;
+            margin-bottom: 2rem;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 5px #333;
+            overflow: hidden;
+
+        }
+
+        .movie-card img {
+            width: 200px;
+            height: 300px;
+            object-fit: cover;
+            margin-right: 1rem;
+        }
+
+        .movie-info {
+            padding: 1rem;
+        }
+
+        .movie-info h3 {
+            margin: 0;
+            font-size: 1.5rem;
+        }
+
+        .movie-info p {
+            margin: 1rem 0;
+        }
+
+        button {
+            background-color: #6c5ce7;
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #333;
+            color: #fff;
+            box-shadow: 0 0 10px rgba(108, 92, 231, 0.5);
+            transform: scale(1.2);
+            transition: all 0.3s ease-in-out;
+        }
+
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+        }
+        header .sp img {
+            margin-top: 0px;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+
+        }
+
+        .social-links {
+            margin-bottom: 0.5rem;
+        }
+
+        .social-links a {
+            display: inline-block;
+            margin-right: 1rem;
+            font-size: 1.5rem;
+            color: #fff;
+        }
+
+        .fa-facebook-f {
+            color: #3b5998;
+        }
+
+        .fa-twitter {
+            color: #00acee;
+        }
+
+        .fa-instagram {
+            color: #dd2a7b;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 0.8rem;
+        }
+
+        /* Media Queries */
+
+@media (max-width: 500px) {
+            .social-links {
+                margin-bottom: 0;
+            }
+
+            .social-links a {
+                margin-right: 0.5rem;
+            }
+
+        }
+        .card ul {
+            list-style: none;
+            padding: 0;
+            margin: 5px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .card ul li {
+            margin-bottom: 5px;
+        }
+
+
+        /* Media Queries */
+@media screen and (max-width: 768px) {
+            header {
+                flex-direction: column;
+                height: 18vh;
+                position: static;
+            }
+
+            header h1 {
+                margin-bottom: 1rem;
+                font-size: 30px;
+            }
+
+            nav {
+                margin-top:;
+            }
+            nav li {
+                margin: 0 0.5rem;
+
+            }
+
+
+            main {
+                padding: 1rem;
+            }
+
+            .movie-card {
+                flex-direction: column;
+                max-width: 300px;
+                margin: 50px auto;
+
+
+
+            }
+
+            .movie-card img {
+                width: 100%;
+                height: auto;
+                margin: 0;
+                margin-bottom: 1rem;
+            }
+            #ul1 li button {
+                margin-top: 1000px;
+            }
+        }
+
+        /*logo*/
+        #logo {
+            width: 200px;
+        }
+
+
+
+        /*for seris card*/
+        #ul1 {
+            list-style: none;
+            padding: 0;
+            margin: 5px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        #ul1 li {
+            margin-bottom: 5px;
+        }
+        #ul1 li button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            flex-wrap: wrap;
+            text-align: center;
+            text-decoration: none;
+            display: flex;
+            border-radius: none;
+            margin-top: 5px;
+
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            min-width: 0px;
+        }
+        #ul1 li button:hover {
+            background-color: #4CAF50;
+            color: #fff;
+            box-shadow: 0 0 10px rgba(108, 92, 231, 0.5);
+            transform: scale(1.1);
+            transition: all 0.3s ease-in-out;
+        }
+
+
+
+
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1> <img id="logo" src="logo (1).png" alt="" /></h1>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="./About.html">About</a></li>
+                <li><a href="#">TV</a></li>
+                <li><a href="Anime.html">Anime</a></li>
+                <li><a href="contect.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="featured-movies">
+            <h2>Featured Movies</h2>
+            
+            <div class="movie-card">
+                <img src="Anime1.jpg" alt="Movie 1">
+                <div class="movie-info">
+                    <h3>Demons Slayer(18)</h3>
+
+                    <div class="Episods">
+
+
+                        <ul id="ul1">
+                            <li><button> 1</button></li>
+                            <li><button> 2</button></li>
+                            <li><button> 3</button></li>
+                            <li><button> 4</button></li>
+                            <li><button> 5</button></li>
+                            <li><button> 6</button></li>
+                            <li><button> 7</button></li>
+                            <li><button> 8</button></li>
+                            <li><button> 9</button></li>
+                            <li><button> 10</button></li>
+                            <li><button> 11</button></li>
+                            <li><button> 12</button></li>
+                            <li><button> 13</button></li>
+                            <li><button> 14</button></li>
+                            <li><button> 15</button></li>
+                            <li><button> 16</button></li>
+                            <li><button> 17</button></li>
+   
+
+
+
+                        </ul>
+                    </div>
+                    <a href="http://103.152.18.18/Data/tvseries/english/Legacies/s02/Legacies%20S02E01%20I%27ll%20Never%20Give%20Up%20Hope.mp4">
+                        <button>Download</button>
+                    </a>
+
+                </div>
+            </div>
+            
+            
+            
+                        <div class="movie-card">
+                <img src="./Anime7.jpg" alt="Movie ">
+                <div class="movie-info">
+                    <h3>Movie 1</h3>
+
+                    <div class="Episods">
+
+
+                        <ul id="ul1">
+                            <li><button> 1</button></li>
+                            <li><button> 2</button></li>
+                            <li><button> 3</button></li>
+                            <li><button> 4</button></li>
+                            <li><button> 5</button></li>
+                            <li><button> 6</button></li>
+                            <li><button> 7</button></li>
+                            <li><button> 8</button></li>
+                            <li><button> 9</button></li>
+                            <li><button> 10</button></li>
+                            <li><button> 11</button></li>
+                            <li><button> 12</button></li>
+                            <li><button> 13</button></li>
+                            <li><button> 14</button></li>
+                            <li><button> 15</button></li>
+                            <li><button> 16</button></li>
+                            <li><button> 17</button></li>
+   
+
+
+
+                        </ul>
+                    </div>
+                    <a href="http://103.152.18.18/Data/tvseries/english/Legacies/s02/Legacies%20S02E01%20I%27ll%20Never%20Give%20Up%20Hope.mp4">
+                        <button>Download</button>
+                    </a>
+
+                </div>
+            </div>
+            
+            
+            
+            
+            <div class="movie-card">
+                <img src="Anime1.jpg" alt="Movie 1">
+                <div class="movie-info">
+                    <h3>Demons Slayer(18)</h3>
+
+                    <div class="Episods">
+
+
+                        <ul id="ul1">
+                            <li><button> 1</button></li>
+                            <li><button> 2</button></li>
+                            <li><button> 3</button></li>
+                            <li><button> 4</button></li>
+                            <li><button> 5</button></li>
+                            <li><button> 6</button></li>
+                            <li><button> 7</button></li>
+                            <li><button> 8</button></li>
+                            <li><button> 9</button></li>
+                            <li><button> 10</button></li>
+                            <li><button> 11</button></li>
+                            <li><button> 12</button></li>
+                            <li><button> 13</button></li>
+                            <li><button> 14</button></li>
+                            <li><button> 15</button></li>
+                            <li><button> 16</button></li>
+                            <li><button> 17</button></li>
+   
+
+
+
+                        </ul>
+                    </div>
+                    <a href="http://103.152.18.18/Data/tvseries/english/Legacies/s02/Legacies%20S02E01%20I%27ll%20Never%20Give%20Up%20Hope.mp4">
+                        <button>Download</button>
+                    </a>
+
+                </div>
+            </div>
+            
+            
+            <div class="movie-card">
+                <img src="Anime3.jpg" alt="Movie 1">
+                <div class="movie-info">
+                    <h3>Movie 1</h3>
+
+                    <div class="Episods">
+
+
+                        <ul id="ul1">
+                            <li><button> 1</button></li>
+                            <li><button> 2</button></li>
+                            <li><button> 3</button></li>
+                            <li><button> 4</button></li>
+                            <li><button> 5</button></li>
+                            <li><button> 6</button></li>
+                            <li><button> 7</button></li>
+                            <li><button> 8</button></li>
+                            <li><button> 9</button></li>
+                            <li><button> 10</button></li>
+                            <li><button> 11</button></li>
+                            <li><button> 12</button></li>
+                            <li><button> 13</button></li>
+                            <li><button> 14</button></li>
+                            <li><button> 15</button></li>
+                            <li><button> 16</button></li>
+                            <li><button> 17</button></li>
+   
+
+
+
+                        </ul>
+                    </div>
+                    <a href="http://103.152.18.18/Data/tvseries/english/Legacies/s02/Legacies%20S02E01%20I%27ll%20Never%20Give%20Up%20Hope.mp4">
+                        <button>Download</button>
+                    </a>
+
+                </div>
+            </div>
+            
+            
+            
+            <div class="movie-card">
+                <img src="Anime3.jpg" alt="Movie 1">
+                <div class="movie-info">
+                    <h3>Movie 1</h3>
+
+                    <div class="Episods">
+
+
+                        <ul id="ul1">
+                            <li><button> 1</button></li>
+                            <li><button> 2</button></li>
+                            <li><button> 3</button></li>
+                            <li><button> 4</button></li>
+                            <li><button> 5</button></li>
+                            <li><button> 6</button></li>
+                            <li><button> 7</button></li>
+                            <li><button> 8</button></li>
+                            <li><button> 9</button></li>
+                            <li><button> 10</button></li>
+                            <li><button> 11</button></li>
+                            <li><button> 12</button></li>
+                            <li><button> 13</button></li>
+                            <li><button> 14</button></li>
+                            <li><button> 15</button></li>
+                            <li><button> 16</button></li>
+                            <li><button> 17</button></li>
+   
+
+
+
+                        </ul>
+                    </div>
+                    <a href="http://103.152.18.18/Data/tvseries/english/Legacies/s02/Legacies%20S02E01%20I%27ll%20Never%20Give%20Up%20Hope.mp4">
+                        <button>Download</button>
+                    </a>
+
+                </div>
+            </div>
+            
+            
+            <div class="movie-card">
+                <img src="Anime4.jpg" alt="Movie 1">
+                <div class="movie-info">
+                    <h3>Movie 1</h3>
+
+                    <div class="Episods">
+
+
+                        <ul id="ul1">
+                            <li><button> 1</button></li>
+                            <li><button> 2</button></li>
+                            <li><button> 3</button></li>
+                            <li><button> 4</button></li>
+                            <li><button> 5</button></li>
+                            <li><button> 6</button></li>
+                            <li><button> 7</button></li>
+                            <li><button> 8</button></li>
+                            <li><button> 9</button></li>
+                            <li><button> 10</button></li>
+                            <li><button> 11</button></li>
+                            <li><button> 12</button></li>
+                            <li><button> 13</button></li>
+                            <li><button> 14</button></li>
+                            <li><button> 15</button></li>
+                            <li><button> 16</button></li>
+                            <li><button> 17</button></li>
+   
+
+
+
+                        </ul>
+                    </div>
+                    <a href="http://103.152.18.18/Data/tvseries/english/Legacies/s02/Legacies%20S02E01%20I%27ll%20Never%20Give%20Up%20Hope.mp4">
+                        <button>Download</button>
+                    </a>
+
+                </div>
+            </div>
+            
+            
+            
+            <div class="movie-card">
+                <img src="Anime5.jpg" alt="Movie 1">
+                <div class="movie-info">
+                    <h3>Movie 1</h3>
+
+                    <div class="Episods">
+
+
+                        <ul id="ul1">
+                            <li><button> 1</button></li>
+                            <li><button> 2</button></li>
+                            <li><button> 3</button></li>
+                            <li><button> 4</button></li>
+                            <li><button> 5</button></li>
+                            <li><button> 6</button></li>
+                            <li><button> 7</button></li>
+                            <li><button> 8</button></li>
+                            <li><button> 9</button></li>
+                            <li><button> 10</button></li>
+                            <li><button> 11</button></li>
+                            <li><button> 12</button></li>
+                            <li><button> 13</button></li>
+                            <li><button> 14</button></li>
+                            <li><button> 15</button></li>
+                            <li><button> 16</button></li>
+                            <li><button> 17</button></li>
+   
+
+
+
+                        </ul>
+                    </div>
+                    <a href="http://103.152.18.18/Data/tvseries/english/Legacies/s02/Legacies%20S02E01%20I%27ll%20Never%20Give%20Up%20Hope.mp4">
+                        <button>Download</button>
+                    </a>
+
+                </div>
+            </div>
+            
+            
+            <div class="movie-card">
+                <img src="Anime6.jpg" alt="Movie 1">
+                <div class="movie-info">
+                    <h3>Movie 1</h3>
+
+                    <div class="Episods">
+
+
+                        <ul id="ul1">
+                            <li><button> 1</button></li>
+                            <li><button> 2</button></li>
+                            <li><button> 3</button></li>
+                            <li><button> 4</button></li>
+                            <li><button> 5</button></li>
+                            <li><button> 6</button></li>
+                            <li><button> 7</button></li>
+                            <li><button> 8</button></li>
+                            <li><button> 9</button></li>
+                            <li><button> 10</button></li>
+                            <li><button> 11</button></li>
+                            <li><button> 12</button></li>
+                            <li><button> 13</button></li>
+                            <li><button> 14</button></li>
+                            <li><button> 15</button></li>
+                            <li><button> 16</button></li>
+                            <li><button> 17</button></li>
+   
+
+
+
+                        </ul>
+                    </div>
+                    <a href="http://103.152.18.18/Data/tvseries/english/Legacies/s02/Legacies%20S02E01%20I%27ll%20Never%20Give%20Up%20Hope.mp4">
+                        <button>Download</button>
+                    </a>
+
+                </div>
+            </div>
+
+            <div class="movie-card">
+                <img src="Anime7.jpg" alt="Movie 1">
+                <div class="movie-info">
+                    <h3>Movie 1</h3>
+
+                    <div class="Episods">
+
+
+                        <ul id="ul1">
+                            <li><button> 1</button></li>
+                            <li><button> 2</button></li>
+                            <li><button> 3</button></li>
+                            <li><button> 4</button></li>
+                            <li><button> 5</button></li>
+                            <li><button> 6</button></li>
+                            <li><button> 7</button></li>
+                            <li><button> 8</button></li>
+                            <li><button> 9</button></li>
+                            <li><button> 10</button></li>
+                            <li><button> 11</button></li>
+                            <li><button> 12</button></li>
+                            <li><button> 13</button></li>
+                            <li><button> 14</button></li>
+                            <li><button> 15</button></li>
+                            <li><button> 16</button></li>
+                            <li><button> 17</button></li>
+   
+
+
+
+                        </ul>
+                    </div>
+                    <a href="http://103.152.18.18/Data/tvseries/english/Legacies/s02/Legacies%20S02E01%20I%27ll%20Never%20Give%20Up%20Hope.mp4">
+                        <button>Download</button>
+                    </a>
+
+                </div>
+            </div>
+            
+            
+            
+            
+
+
+        </section
+        </main>
+        <footer>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+            <p>
+                &copy; 2021 Movie Download. All Rights Reserved.
+            </p>
+        </footer>
+
+    </body>
+    <script type="text/javascript" charset="utf-8">
+
+
+    </script>
+</html>
